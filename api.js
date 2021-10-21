@@ -8,8 +8,12 @@ const port = process.env.PORT || 5000;
 const incidenza = './dati/incidenza_comuni_distretti.csv';
 const vaccinati = './dati/vaccinati.csv';
 
+let options = {
+    flatKeys:true
+}
+
 const parse = (f) => {
-    let file = csv().fromFile(f)
+    let file = csv(options).fromFile(f)
     return file
 }
 
