@@ -3,7 +3,7 @@ const csv = require('csvtojson')
 const cors = require('cors');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const incidenza = './dati/incidenza_comuni_distretti.csv';
 const vaccinati = './dati/vaccinati.csv';
