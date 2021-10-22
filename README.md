@@ -1,5 +1,16 @@
 # covid-reports-api
 
+```
+Bollettino settimanale n° 3 del 20/10/2021:
+Dati Epidemiologici e Vaccinali
+
+Servizio 9
+“Sorveglianza ed epidemiologia valutativa”
+Servizio 4 
+“Igiene Pubblica”
+Task Force Vaccini Regionale
+```
+
 Alcune query implementate:
 
 - https://covid-reports-api.herokuapp.com/vaccini
