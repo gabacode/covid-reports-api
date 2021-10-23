@@ -28,7 +28,7 @@ HELP FUNZIONE:
 
 Dati Epidemiologici e Vaccinali:
 
-La funzione, tramite una richiesta all'API (realizzate da Gabriele), restituisce le informazioni sui vaccati per i Comuni siciliani:
+La funzione, tramite una richiesta all'API (realizzate da Gabriele), restituisce le informazioni sui vaccinati per i Comuni siciliani:
 
 Esempio: 
 - get_vax_info('082034','comune') -> 'Corleone' 
