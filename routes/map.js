@@ -13,7 +13,17 @@ router.get("/", (req, res) => {
         res.send(features.find(x => x.properties.PRO_COM_T === query.comune))
     }
     else if(typeof query.provincia !== 'undefined'){
-        res.send(features.filter(x => x.properties.COD_PROV.toString() === query.provincia.toString()))
+        res.send({
+            "type": "FeatureCollection",
+            "name": "comuni_siciliani2021",
+            "crs": {
+                "type": "name",
+                "properties": {
+                  "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+                }
+              },
+            "features" : features.filter(x => x.properties.COD_PROV.toString() === query.provincia.toString())
+        })
     }
     else{
         res.send(data)
