@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
         res.send(features.filter(x => x.properties.COD_PROV.toString() === query.provincia.toString()))
     }
     else{
-        res.send(features)
+        res.send(data)
     }
 })
 
