@@ -13,14 +13,7 @@ Task Force Vaccini Regionale
 
 fonte dati: [Regione Sicilia](https://www.regione.sicilia.it/la-regione-informa/covid-bollettino-settimanale-ancora-calo-casi-sicilia-aumento-prime-dosi)
 
-La documentazione delle API è esplorabile al seguente [link](https://covid-reports-api.herokuapp.com/docs/).
-
-Alcune query implementate:
-
-- https://covid-reports-api.herokuapp.com/vaccini
-- https://covid-reports-api.herokuapp.com/vaccini?q=agrigento
-- https://covid-reports-api.herokuapp.com/incidenza
-- https://covid-reports-api.herokuapp.com/incidenza?comune=castelvetrano
+La documentazione delle API è consultabile al seguente [link](https://covid-reports-api.herokuapp.com/docs/).
 
 ## funzione personalizzata per QGIS
 
