@@ -12,7 +12,7 @@ const vaccinati = `${__dirname}/../dati/vaccinati.csv`;
  *       type: object
  *       properties:
  *         cod_prov:
- *           type: string
+ *           type: integer
  *           description: Codice Provinciale
  *         pro_com_t:
  *           type: string
@@ -24,18 +24,18 @@ const vaccinati = `${__dirname}/../dati/vaccinati.csv`;
  *           type: string
  *           description: Nome del Comune
  *         %vaccinati1dose:
- *           type: string
+ *           type: float
  *           description: Percentuale dei vaccinati con almeno una dose
  *         %Immunizzati:
- *           type: string
+ *           type: float
  *           description: Percentuale degli immunizzati
  *       example:
- *         cod_prov: "84"
+ *         cod_prov: 84
  *         pro_com_t: "084003"
  *         provincia: "Agrigento"
  *         comune: "Aragona"
- *         %vaccinati1dose: "88.51"
- *         %Immunizzati: "85.68"
+ *         %vaccinati1dose: 88.51
+ *         %Immunizzati: 85.68
  */
 
  /**
@@ -67,10 +67,18 @@ const vaccinati = `${__dirname}/../dati/vaccinati.csv`;
  *                 $ref: '#/components/schemas/Vaccini'
  */
 
+const schema = {
+    'cod_prov': "int",
+    'pro_com_t': "string",
+    'provincia': "string",
+    'comune': "string",
+    '%vaccinati1dose': "float",
+    '%Immunizzati': "float",
+}
 
 router.get('/', async (req, res) => {
     const query = req.query.q
-    const data = await func.parse(vaccinati)
+    const data = await func.parse(vaccinati, schema)
     
     if(query){
         try {

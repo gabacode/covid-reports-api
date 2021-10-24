@@ -18,10 +18,10 @@ const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
  *           type: string
  *           description: Denominazione del Comune
  *         Casi ultimi 7gg:
- *           type: string
+ *           type: integer
  *           description: Nuovi positivi negli ultimi 7 giorni
  *         Incidenza x 100.000 ab 7 gg:
- *           type: string
+ *           type: float
  *           description: Numero nuovi positivi settimanali a media mobile
  *         Variazione tra le settimane:
  *           type: string
@@ -29,8 +29,8 @@ const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
  *       example:
  *         Distretto: "BAGHERIA"
  *         Comune: "BAGHERIA"
- *         Casi ultimi 7gg: "4"
- *         Incidenza x 100.000 ab 7 gg: "7.53"
+ *         Casi ultimi 7gg: 4
+ *         Incidenza x 100.000 ab 7 gg: 7.53
  *         Variazione tra le settimane: "-60%"
  */
 
@@ -63,9 +63,17 @@ const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
  *                 $ref: '#/components/schemas/Incidenza'
  */
 
+ const schema = {
+    'Distretto': "string",
+    'Comune': "string",
+    'Casi ultimi 7gg': "int",
+    'Incidenza x 100.000 ab 7 gg': "float",
+    'Variazione tra le settimane': "string",
+}
+
 router.get("/", async (req, res) => {
     const query = req.query
-    const data = await func.parse(incidenza)
+    const data = await func.parse(incidenza, schema)
 
     if(query.comune){
         try {
