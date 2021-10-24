@@ -45,6 +45,12 @@ const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
  * /incidenza:
  *   get:
  *     summary: Restituisce l'incidenza settimanale per i comuni siciliani
+ *     parameters:
+ *       - in: query
+ *         name: comune
+ *         schema:
+ *           type: string
+ *         description: Restituisce i comuni che contengono parti della stringa `comune`
  *     tags: [Incidenza]
  *     responses:
  *       200:
@@ -58,13 +64,24 @@ const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
  */
 
 router.get("/", async (req, res) => {
+    const query = req.query
     const data = await func.parse(incidenza)
+
+    if(query.comune){
+        try {
+            res.send(func.comune(data, query.comune))
+        }
+        catch(e){
+            console.log(e)
+        }
+    }else{
         try {
             res.send(data)
         }
         catch(e){
             res.sendStatus(e)
         }
-    })
+    }
+})
 
 module.exports = router;

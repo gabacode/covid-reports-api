@@ -49,6 +49,12 @@ const vaccinati = `${__dirname}/../dati/vaccinati.csv`;
  * /vaccini:
  *   get:
  *     summary: Restituisce le percentuali di vaccinati ed immunizzati per i comuni siciliani
+ *     parameters:
+ *       - in: query
+ *         name: q
+ *         schema:
+ *           type: string
+ *         description: Restituisce i campi che contengono parti della stringa `q`
  *     tags: [Vaccini]
  *     responses:
  *       200:
