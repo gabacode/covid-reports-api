@@ -13,6 +13,8 @@ Task Force Vaccini Regionale
 
 fonte dati: <https://www.regione.sicilia.it/la-regione-informa/covid-bollettino-settimanale-ancora-calo-casi-sicilia-aumento-prime-dosi>
 
+La documentazione delle API è esplorabile al seguente [link](https://covid-reports-api.herokuapp.com/docs/).
+
 Alcune query implementate:
 
 - https://covid-reports-api.herokuapp.com/vaccini
