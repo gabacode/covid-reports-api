@@ -7,6 +7,7 @@ const specs = require('./openapi.json')
 
 const incidenzaRouter = require('./routes/incidenza');
 const vacciniRouter = require('./routes/vaccini');
+const mapRouter = require('./routes/map');
 
 const port = process.env.PORT || 5000;
 const app = express();
@@ -33,5 +34,6 @@ var options = {
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDoc, options))
 app.use("/incidenza", incidenzaRouter);
 app.use("/vaccini", vacciniRouter);
+app.use("/map", mapRouter);
 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`))
