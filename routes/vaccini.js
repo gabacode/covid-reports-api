@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const func = require('../lib/functions')
 
-const vaccinati = `${__dirname}/../dati/vaccinati.csv`;
+const vaccinati = `${__dirname}/../dati/vaccinati-latest.csv`;
 
 /**
  * @swagger
