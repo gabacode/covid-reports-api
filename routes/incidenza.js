@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const func = require('../lib/functions');
 
-const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
+const incidenza = `${__dirname}/../dati/incidenza-latest.csv`;
 
 /**
  * @swagger
@@ -11,27 +11,35 @@ const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
  *     Incidenza:
  *       type: object
  *       properties:
- *         Distretto:
+ *         data:
+ *           type: date
+ *           description: Data pubblicazione report DASOE
+ *         cod_prov:
+ *           type: int
+ *           description: Codice ISTAT della Provincia
+ *         pro_com_t:
  *           type: string
- *           description: Nome del distretto Sanitario
- *         Comune:
+ *           description: Codice ISTAT del Comune
+ *         provincia:
+ *           type: string
+ *           description: Denominazione della Provincia
+ *         comune:
  *           type: string
  *           description: Denominazione del Comune
- *         Casi ultimi 7gg:
- *           type: integer
- *           description: Nuovi positivi negli ultimi 7 giorni
- *         Incidenza x 100.000 ab 7 gg:
+ *         incidenza:
  *           type: float
- *           description: Numero nuovi positivi settimanali a media mobile
- *         Variazione tra le settimane:
- *           type: string
- *           description: Percentuale variazione nuovi positivi settimanali
+ *           description: Incidenza cumulativa settimanale (ogni 100.000 abitanti)
+ *         casi:
+ *           type: integer
+ *           description: Nuovi casi settimanali
  *       example:
- *         Distretto: "BAGHERIA"
- *         Comune: "BAGHERIA"
- *         Casi ultimi 7gg: 4
- *         Incidenza x 100.000 ab 7 gg: 7.53
- *         Variazione tra le settimane: "-60%"
+ *         data: "2021-10-27"
+ *         cod_prov: 84
+ *         pro_com_t: "084002"
+ *         provincia: "Agrigento"
+ *         comune: "Alessandria della Rocca"
+ *         incidenza: 855
+ *         casi: 6
  */
 
  /**
@@ -64,11 +72,13 @@ const incidenza = `${__dirname}/../dati/incidenza_comuni_distretti.csv`;
  */
 
  const schema = {
-    'Distretto': "string",
-    'Comune': "string",
-    'Casi ultimi 7gg': "int",
-    'Incidenza x 100.000 ab 7 gg': "float",
-    'Variazione tra le settimane': "string",
+     'data': "string",
+     'cod_prov': "int",
+     'pro_com_t': "string",
+     'provincia': "string",
+     'comune': "string",
+     'incidenza': "float",
+     'casi': "int"
 }
 
 router.get("/", async (req, res) => {

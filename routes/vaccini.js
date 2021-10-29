@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const func = require('../lib/functions')
 
-const vaccinati = `${__dirname}/../dati/vaccinati-latest.csv`;
+const vaccinati = `${__dirname}/../dati/vaccini-latest.csv`;
 
 /**
  * @swagger
@@ -11,31 +11,35 @@ const vaccinati = `${__dirname}/../dati/vaccinati-latest.csv`;
  *     Vaccini:
  *       type: object
  *       properties:
+ *         data:
+ *           type: date
+ *           description: Data pubblicazione report DASOE
  *         cod_prov:
  *           type: integer
- *           description: Codice Provinciale
+ *           description: Codice ISTAT della Provincia	
  *         pro_com_t:
  *           type: string
- *           description: Codice ISTAT
+ *           description: Codice ISTAT del Comune	
  *         provincia:
  *           type: string
- *           description: Nome della Provincia
+ *           description: Denominazione della Provincia
  *         comune:
  *           type: string
- *           description: Nome del Comune
+ *           description: Denominazione del Comune
  *         %vaccinati1dose:
  *           type: float
- *           description: Percentuale dei vaccinati con almeno una dose
+ *           description: Percentuale di persone vaccinate con almeno una dose (calcolata rispetto al target)
  *         %Immunizzati:
  *           type: float
- *           description: Percentuale degli immunizzati
+ *           description: Percentuale di persone vaccinate con 2 o più dosi, persone vaccinate in monodose per pregressa infezione Covid, persone vaccinate con Janssen (calcolata rispetto al target)
  *       example:
+ *         data: "2021-10-27"
  *         cod_prov: 84
- *         pro_com_t: "084003"
+ *         pro_com_t: "084002"
  *         provincia: "Agrigento"
- *         comune: "Aragona"
- *         %vaccinati1dose: 88.51
- *         %Immunizzati: 85.68
+ *         comune: "Alessandria della Rocca"
+ *         %vaccinati1dose: 84.65
+ *         %Immunizzati: 82.72
  */
 
  /**
@@ -68,6 +72,7 @@ const vaccinati = `${__dirname}/../dati/vaccinati-latest.csv`;
  */
 
 const schema = {
+    'data': "date",
     'cod_prov': "int",
     'pro_com_t': "string",
     'provincia': "string",
