@@ -1,4 +1,14 @@
+<a href="https://www.datibenecomune.it/"><img src="https://img.shields.io/badge/%F0%9F%99%8F-%23datiBeneComune-%23FFD700"/></a>
+---
 # covid-reports-api
+
+---
+**N.B**
+
+Il progetto si è trasferito sul repository [opendatasicilia/covid-open-report-sicilia](https://github.com/opendatasicilia/covid-open-report-sicilia).  
+Le API saranno sospese il prossimo 4 Novembre 2021 per proseguire al nuovo indirizzo.
+
+---
 
 URL : <https://covid-reports-api.herokuapp.com/>
 
