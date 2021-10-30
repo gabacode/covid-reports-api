@@ -23,7 +23,7 @@ def get_vax_info(xx, chiave, feature, parent):
       <li>get_vax_info('082034','comune') -> 'Corleone'</li>
       <li>get_vax_info("pro_com_t",'%vaccinati1dose') -> 'Corleone'</li>
     </ul>
-    <h2>NB: le chiavi sono tutte minuscole: cod_prov, pro_com_t, provincia, comune, %vaccinati1dose,%Immunizzati</h2>
+    <h2>NB: le chiavi sono tutte minuscole: cod_prov, pro_com_t, provincia, comune, %vaccinati, %immunizzati</h2>
     """
     req = "https://covid-reports-api.herokuapp.com/vaccini?q="+str(xx)
     r = requests.get(req)

@@ -31,4 +31,4 @@ Esempio:
 - get_vax_info('082034','comune') -> 'Corleone' 
 - get_vax_info("pro_com_t",'%vaccinati1dose') -> '88.23'
 
-NB: le chiavi sono tutte minuscole: cod_prov, pro_com_t, provincia, comune, %vaccinati1dose,%Immunizzati
+NB: le chiavi sono tutte minuscole: cod_prov, pro_com_t, provincia, comune, %vaccinati,%immunizzati

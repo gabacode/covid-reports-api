@@ -26,10 +26,10 @@ const vaccinati = `${__dirname}/../dati/vaccini-latest.csv`;
  *         comune:
  *           type: string
  *           description: Denominazione del Comune
- *         %vaccinati1dose:
+ *         %vaccinati:
  *           type: float
  *           description: Percentuale di persone vaccinate con almeno una dose (calcolata rispetto al target)
- *         %Immunizzati:
+ *         %immunizzati:
  *           type: float
  *           description: Percentuale di persone vaccinate con 2 o più dosi, persone vaccinate in monodose per pregressa infezione Covid, persone vaccinate con Janssen (calcolata rispetto al target)
  *       example:
@@ -38,8 +38,8 @@ const vaccinati = `${__dirname}/../dati/vaccini-latest.csv`;
  *         pro_com_t: "084002"
  *         provincia: "Agrigento"
  *         comune: "Alessandria della Rocca"
- *         %vaccinati1dose: 84.65
- *         %Immunizzati: 82.72
+ *         %vaccinati: 84.65
+ *         %immunizzati: 82.72
  */
 
  /**
@@ -77,8 +77,8 @@ const schema = {
     'pro_com_t': "string",
     'provincia': "string",
     'comune': "string",
-    '%vaccinati1dose': "float",
-    '%Immunizzati': "float",
+    '%vaccinati': "float",
+    '%immunizzati': "float",
 }
 
 router.get('/', async (req, res) => {
