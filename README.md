@@ -6,11 +6,11 @@
 **N.B**
 
 Il progetto si è trasferito sul repository [opendatasicilia/covid-open-report-sicilia](https://github.com/opendatasicilia/covid-open-report-sicilia).  
-Le API saranno sospese il prossimo 4 Novembre 2021 per proseguire al nuovo indirizzo.
+Le API sono raggiungibili al nuovo indirizzo.
+
+Per quanto riguarda le Mappe, il nuovo endpoint si trova a [questo link](https://api.infocomuni.eu/map) e segue il progetto [opendatasicilia/comuni-italiani](https://github.com/opendatasicilia/comuni-italiani)
 
 ---
-
-URL : <https://covid-reports-api.herokuapp.com/>
 
 ```
 Bollettino settimanale n° 3 del 20/10/2021:
